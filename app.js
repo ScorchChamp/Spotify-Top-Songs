@@ -37,12 +37,12 @@ if (OAUTH === 'null null') {
     let generateRandomString = (length) => (Math.random() + 1).toString(36).substring(length);
     var state = generateRandomString(16);
     localStorage.setItem('csrf', state);
-    const req_url = 'https://accounts.spotify.com/authorize';
-    url += '?response_type=token';
-    url += '&client_id=' + encodeURIComponent(client_id);
-    url += '&scope=' + encodeURIComponent(scope);
-    url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-    url += '&state=' + encodeURIComponent(state);
+    let req_url = 'https://accounts.spotify.com/authorize';
+    req_url += '?response_type=token';
+    req_url += '&client_id=' + encodeURIComponent(client_id);
+    req_url += '&scope=' + encodeURIComponent(scope);
+    req_url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+    req_url += '&state=' + encodeURIComponent(state);
     window.location.replace(req_url);
 } else {
     const playlist_id = '37i9dQZEVXbMDoHDwVN2tF';
