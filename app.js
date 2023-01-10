@@ -30,7 +30,7 @@ function parseSong(song, index) {
     `
 }
 
-if (OAUTH === ' ') {
+if (OAUTH === 'null null') {
     const client_id = '6df11dc7c93c4c7ca2028a19177670b9';
     const redirect_uri = document.location.href;
     const scope = 'playlist-read-private playlist-read-public';
