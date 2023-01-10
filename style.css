@@ -48,3 +48,7 @@ a {
 .song:hover {
     background-color: #555;
 }
+
+#error {
+    text-align: center;
+}

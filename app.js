@@ -33,16 +33,16 @@ function parseSong(song, index) {
 if (OAUTH === 'null null') {
     const client_id = '6df11dc7c93c4c7ca2028a19177670b9';
     const redirect_uri = document.location.href;
-    const scope = 'playlist-read-private playlist-read-public';
+    const scope = '';
     let generateRandomString = (length) => (Math.random() + 1).toString(36).substring(length);
     var state = generateRandomString(16);
     localStorage.setItem('csrf', state);
     let req_url = 'https://accounts.spotify.com/authorize';
     req_url += '?response_type=token';
-    req_url += '&client_id=' + encodeURIComponent(client_id);
-    req_url += '&scope=' + encodeURIComponent(scope);
-    req_url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-    req_url += '&state=' + encodeURIComponent(state);
+    req_url += `&client_id=${client_id}`;
+    req_url += `&scope=${scope}`;
+    req_url += `&redirect_uri=${redirect_uri}`;
+    req_url += `&state=${state}`;
     window.location.replace(req_url);
 } else {
     const playlist_id = '37i9dQZEVXbMDoHDwVN2tF';
@@ -58,5 +58,9 @@ if (OAUTH === 'null null') {
         data.items.map((element, index) => {
             appContainer.innerHTML += parseSong(element, index)
         });
+    })
+    .catch((error) => {
+        document.getElementById('error').style.display = 'block';
+        console.log(error);
     })
 }
