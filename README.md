@@ -26,6 +26,8 @@ View today's top 50 songs on spotify!
 
 ## Features
 
+[Look at the showcase demo here!](https://ScorchChamp.github.io/Spotify-Top-Songs)
+
 - View the current top 50 songs on spotify!
 - Click on the song to open the song in spotify!
 
