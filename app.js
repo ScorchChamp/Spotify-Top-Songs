@@ -32,7 +32,7 @@ function parseSong(song, index) {
 
 if (OAUTH === ' ') {
     const client_id = '6df11dc7c93c4c7ca2028a19177670b9';
-    const redirect_uri = document.location.origin;
+    const redirect_uri = document.location.href;
     const scope = 'playlist-read-private playlist-read-public';
     let generateRandomString = (length) => (Math.random() + 1).toString(36).substring(length);
     var state = generateRandomString(16);
