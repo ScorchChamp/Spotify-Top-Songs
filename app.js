@@ -1,3 +1,4 @@
+window.addEventListener("load", function () {
 const url_string = window.location.href.replace("#", "?");
 const url = new URL(url_string);
 const token_type = url.searchParams.get("filename");
@@ -64,3 +65,4 @@ if (OAUTH === 'null null') {
         console.log(error);
     })
 }
+});
